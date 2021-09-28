@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -22,9 +24,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "food_categories")
-public class Food implements Serializable{
+public class Food implements Serializable {
+
+    private static final long serialVersionUID = 1234567L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,7 +45,10 @@ public class Food implements Serializable{
 	@Column(name = "description")
 	private String description;
 
-	@ManyToOne
+	//@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JsonBackReference
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name = "diet_type_id")
 	private Diet diet;
 
 }

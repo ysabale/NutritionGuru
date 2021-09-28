@@ -3,6 +3,7 @@ package com.nutrition.model;
 import java.io.Serializable;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -17,6 +18,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -33,6 +37,8 @@ import lombok.Setter;
 @Table(name = "diet_master")
 public class Diet implements Serializable {
 
+    private static final long serialVersionUID = 1234567L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "diet_id")
@@ -41,7 +47,9 @@ public class Diet implements Serializable {
 	@Column(name = "diet_Type", length = 50)
 	private String dietType;
 
-	@OneToMany
-	private Set<Food> food;
+	@OneToMany(mappedBy = "diet", cascade = CascadeType.ALL)
+	@Fetch(value=FetchMode.SELECT)
+	@JsonIgnore
+    private Set<Food> foodList = new HashSet<>();
 
 }

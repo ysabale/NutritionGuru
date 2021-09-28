@@ -9,5 +9,7 @@ import com.nutrition.model.Diet;
 public interface DietRepository extends JpaRepository<Diet, Integer> {
 
 	Diet findDietByDietId(int dietId);
+	
+	Diet findByDietType(String name);
 
 }

@@ -27,11 +27,11 @@ public class NutritionGuruService {
 		}
 
 		if (bodyType.equalsIgnoreCase("Over Weight")) {
-			return "weight Loss";
+			return "Weight Loss";
 		} else if (bodyType.equalsIgnoreCase("under Weight")) {
-			return "weight Gain";
+			return "Weight Gain";
 		} else {
-			return "stable weight";
+			return "Stable Weight";
 		}
 	}
 
