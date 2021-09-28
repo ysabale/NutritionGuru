@@ -1,0 +1,17 @@
+com\nutrition\controller\DietController.class
+com\nutrition\util\CalorieCounterConstants.class
+com\nutrition\model\Food.class
+com\nutrition\model\UserCalorieDetails.class
+com\nutrition\NutritionApplication.class
+com\nutrition\config\SwaggerConfig.class
+com\nutrition\model\PersonData.class
+com\nutrition\model\Diet.class
+com\nutrition\model\ErrorMessage.class
+com\nutrition\service\CalorieService.class
+com\nutrition\controller\NutritionGuruController.class
+com\nutrition\repository\DietRepository.class
+com\nutrition\config\NutritionExceptionHandler.class
+com\nutrition\controller\CalorieController.class
+com\nutrition\config\NutritionCustomException.class
+com\nutrition\service\NutritionGuruService.class
+com\nutrition\service\DietService.class
