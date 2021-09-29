@@ -1,6 +1,5 @@
 package com.nutrition.config;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,7 +20,7 @@ public class NutritionExceptionHandler {
 	public ResponseEntity<ErrorMessage> getInsuranceCustomException(NutritionCustomException exception) {
 		ErrorMessage error = new ErrorMessage();
 		error.setErrorCode("INVALID_INPUT_DATA");
-		error.setErrorMessage(exception.getMessage());
+		error.setErrMessage(exception.getMessage());
 		return new ResponseEntity<ErrorMessage>(error, HttpStatus.BAD_REQUEST);
 	}
 
@@ -35,7 +34,7 @@ public class NutritionExceptionHandler {
 			String fieldName = ((FieldError) error).getField();
 			String emsg = error.getDefaultMessage();
 			errors.put(fieldName, emsg);
-			errorMessage.setErrorMessage(error.getDefaultMessage());
+			errorMessage.setErrMessage(error.getDefaultMessage());
 		});
 		return new ResponseEntity<ErrorMessage>(errorMessage, HttpStatus.BAD_REQUEST);
 	}

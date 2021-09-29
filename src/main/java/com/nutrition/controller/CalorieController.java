@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nutrition.config.NutritionCustomException;
 import com.nutrition.model.UserCalorieDetails;
 import com.nutrition.service.CalorieService;
 
@@ -24,7 +25,7 @@ public class CalorieController {
 	private CalorieService calorieService;
 
 	@PostMapping(value = "/calorieDetails",produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Float> getCalorieDetails(@RequestBody @Valid UserCalorieDetails users) {
+	public ResponseEntity<Float> getCalorieDetails(@RequestBody @Valid UserCalorieDetails users) throws NutritionCustomException {
 		log.info("Hello in Nutrition Portal");
 		float usersCalorie = calorieService.calculateBMR(users);
 		log.info("Total Calorie:"+usersCalorie);

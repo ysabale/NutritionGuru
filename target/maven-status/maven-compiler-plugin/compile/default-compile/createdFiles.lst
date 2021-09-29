@@ -8,6 +8,7 @@ com\nutrition\model\PersonData.class
 com\nutrition\model\Diet.class
 com\nutrition\model\ErrorMessage.class
 com\nutrition\service\CalorieService.class
+com\nutrition\repository\FoodRepository.class
 com\nutrition\controller\NutritionGuruController.class
 com\nutrition\repository\DietRepository.class
 com\nutrition\config\NutritionExceptionHandler.class
