@@ -3,12 +3,16 @@ package com.nutrition.config;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.context.request.WebRequest;
 
 import com.nutrition.model.ErrorMessage;
 
@@ -39,4 +43,15 @@ public class NutritionExceptionHandler {
 		return new ResponseEntity<ErrorMessage>(errorMessage, HttpStatus.BAD_REQUEST);
 	}
 
+	@ExceptionHandler(ConstraintViolationException.class)
+	public ResponseEntity<ErrorMessage> handleConstrainValidationExceptions(ConstraintViolationException ex,
+			WebRequest request) {
+		Map<String, String> errors = new HashMap();
+		ErrorMessage errorMessage = new ErrorMessage();
+		for (ConstraintViolation violation : ex.getConstraintViolations()) {
+			errorMessage.setErrMessage(violation.getMessage() + " ");
+		}
+		errorMessage.setErrorCode("400");
+		return new ResponseEntity<ErrorMessage>(errorMessage, HttpStatus.BAD_REQUEST);
+	}
 }

@@ -6,33 +6,43 @@ import org.springframework.stereotype.Service;
 
 import com.nutrition.model.PersonData;
 
+
+/**
+ * @author aymomin
+ * @implNote 
+ * 
+ *
+ */
 @Service
 public class NutritionGuruService {
 
-	public String getPersondietType(PersonData personDetail) {
+	
+	Logger logger = LoggerFactory.getLogger(NutritionGuruService.class);
+	private static final String weightGain = "Weight Gain";
+	private static final String stableWeight = "Stable Weight";
+	private static final String weightLoss = "Weight Loss";
 
-		Logger logger = LoggerFactory.getLogger(NutritionGuruService.class);
-		String bodyType = null;
+	/**
+	 * @param personDetail
+	 * Convert person height centemeter to meter
+	 * calculate body mass index =weight / (heightInMeter * heightInMeter)
+	 * @return String
+	 * 
+	 */
+	public String getPersonDietType(PersonData personDetail) {
 		float heightInMeter = (personDetail.getPersonHeight()) / 100;
 		float weight = personDetail.getPersonWeight();
-		float BMI = (weight / (heightInMeter * heightInMeter));
-		logger.info("Body mass index:" + BMI);
+		float bMI = (weight / (heightInMeter * heightInMeter));
+		logger.info("Body mass index:" + bMI);
 
-		if (BMI < 18.5) {
-			bodyType = "under Weight";
-		} else if (BMI > 18.5 && BMI < 24.9) {
-			bodyType = "Healthy Weight";
+		if (bMI < 18.5) {
+			return weightGain;
+		} else if (bMI > 18.5 && bMI < 24.9) {
+			return stableWeight;
 		} else {
-			bodyType = "Over Weight";
+			return weightLoss;
 		}
 
-		if (bodyType.equalsIgnoreCase("Over Weight")) {
-			return "Weight Loss";
-		} else if (bodyType.equalsIgnoreCase("under Weight")) {
-			return "Weight Gain";
-		} else {
-			return "Stable Weight";
-		}
 	}
 
 }

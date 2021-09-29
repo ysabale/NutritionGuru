@@ -27,7 +27,7 @@ public class DietService {
 	private NutritionGuruService nutritionGuruService;
 	
 	public List<Food> getDietPlan(PersonData personDetail) {
-		String bodyType = nutritionGuruService.getPersondietType(personDetail);
+		String bodyType = nutritionGuruService.getPersonDietType(personDetail);
 		Diet diet = dietRepository.findByDietType(bodyType);
 		log.info("diet id :"+diet.getDietId());
 		return foodRepository.getPlanDetails(diet.getDietId());
