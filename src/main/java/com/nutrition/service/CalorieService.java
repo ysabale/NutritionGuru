@@ -32,7 +32,7 @@ F is body fat in percentage
 @Slf4j
 public class CalorieService {
 
-	public float calculateBMR(UserCalorieDetails users) throws NutritionCustomException {
+	public Float calculateBMR(UserCalorieDetails users) throws NutritionCustomException {
 		float BMR = 0;
 		int age = users.getAge();
 		String gender = users.getGender();
