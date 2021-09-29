@@ -35,7 +35,7 @@ public class NutritionGuruController {
 	@PostMapping("/person/dietType")
 	public ResponseEntity<String> personDietType(@Valid @RequestBody PersonData personDetail){
 		String dietType = nutritionGuruService.getPersonDietType(personDetail);
-		return new ResponseEntity<String>(dietType, HttpStatus.OK);
+		return new ResponseEntity<>(dietType, HttpStatus.OK);
 	}
 	
 }
