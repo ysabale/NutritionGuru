@@ -13,19 +13,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.nutrition.model.PersonData;
 import com.nutrition.service.NutritionGuruService;
 
-
 /**
- * @author aymomin
- *
+ * @author AYMOMIN
  */
+
+
 @RestController
 @RequestMapping(path = "api")
-
 public class NutritionGuruController {
-	
+
 	@Autowired
 	NutritionGuruService nutritionGuruService;
-	
+
 	/**
 	 * @param personDetail
 	 * @return Diet Type
@@ -33,9 +32,9 @@ public class NutritionGuruController {
 	 * 
 	 */
 	@PostMapping("/person/dietType")
-	public ResponseEntity<String> personDietType(@Valid @RequestBody PersonData personDetail){
+	public ResponseEntity<String> personDietType(@Valid @RequestBody PersonData personDetail) {
 		String dietType = nutritionGuruService.getPersonDietType(personDetail);
 		return new ResponseEntity<>(dietType, HttpStatus.OK);
 	}
-	
+
 }

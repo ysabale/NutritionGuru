@@ -25,7 +25,7 @@ public class NutritionExceptionHandler {
 		ErrorMessage error = new ErrorMessage();
 		error.setErrorCode("INVALID_INPUT_DATA");
 		error.setErrMessage(exception.getMessage());
-		return new ResponseEntity<ErrorMessage>(error, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
 	}
 
 	@ExceptionHandler(MethodArgumentNotValidException.class)
@@ -34,24 +34,23 @@ public class NutritionExceptionHandler {
 		ErrorMessage errorMessage = new ErrorMessage();
 		errorMessage.setErrorCode("INVALID_INPUT_DATA");
 
-		ex.getBindingResult().getAllErrors().forEach((error) -> {
+		ex.getBindingResult().getAllErrors().forEach(error -> {
 			String fieldName = ((FieldError) error).getField();
 			String emsg = error.getDefaultMessage();
 			errors.put(fieldName, emsg);
 			errorMessage.setErrMessage(error.getDefaultMessage());
 		});
-		return new ResponseEntity<ErrorMessage>(errorMessage, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(errorMessage, HttpStatus.BAD_REQUEST);
 	}
 
 	@ExceptionHandler(ConstraintViolationException.class)
 	public ResponseEntity<ErrorMessage> handleConstrainValidationExceptions(ConstraintViolationException ex,
 			WebRequest request) {
-		Map<String, String> errors = new HashMap();
 		ErrorMessage errorMessage = new ErrorMessage();
 		for (ConstraintViolation violation : ex.getConstraintViolations()) {
 			errorMessage.setErrMessage(violation.getMessage() + " ");
 		}
 		errorMessage.setErrorCode("400");
-		return new ResponseEntity<ErrorMessage>(errorMessage, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(errorMessage, HttpStatus.BAD_REQUEST);
 	}
 }

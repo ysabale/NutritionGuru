@@ -1,6 +1,6 @@
 package com.nutrition.controller;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
 import org.junit.Before;
@@ -9,11 +9,9 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.powermock.modules.junit4.PowerMockRunner;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.nutrition.model.PersonData;
-import com.nutrition.service.CalorieService;
 import com.nutrition.service.NutritionGuruService;
 
 @RunWith(PowerMockRunner.class)

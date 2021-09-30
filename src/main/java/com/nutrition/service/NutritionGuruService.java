@@ -8,9 +8,8 @@ import com.nutrition.model.PersonData;
 
 
 /**
- * @author aymomin
- * @implNote 
- * 
+ * @author AYMOMIN
+ * @apiNote  getPersonDietType method give the person diet based on body mass index
  *
  */
 @Service
@@ -24,11 +23,12 @@ public class NutritionGuruService {
 
 	/**
 	 * @param personDetail
-	 * Convert person height centemeter to meter
+	 * Convert person height Centimeter to Meter
 	 * calculate body mass index =weight / (heightInMeter * heightInMeter)
 	 * @return String
 	 * 
 	 */
+	
 	public String getPersonDietType(PersonData personDetail) {
 		float heightInMeter = (personDetail.getPersonHeight()) / 100;
 		float weight = personDetail.getPersonWeight();
