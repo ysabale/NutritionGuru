@@ -32,9 +32,27 @@ public class NutritionGuruServiceTest {
 	}
 	
 	@Test
-	public void testGetPersonDietType() {
+	public void testGetPersonDietTypeForStableWeight() {
 		String expectedResult = "Stable Weight";
 		String response =nutritionGuruService.getPersonDietType(person);
+		assertEquals(expectedResult, response);
+	}
+	@Test
+	public void testGetPersonDietTypeForWeightGain() {
+		String expectedResult = "Weight Gain";
+		PersonData personDetails=new PersonData();
+		personDetails.setPersonHeight(170);
+		personDetails.setPersonWeight(50);
+		String response =nutritionGuruService.getPersonDietType(personDetails);
+		assertEquals(expectedResult, response);
+	}
+	@Test
+	public void testGetPersonDietTypeForWeightLoss() {
+		String expectedResult = "Weight Loss";
+		PersonData personDetails=new PersonData();
+		personDetails.setPersonHeight(160);
+		personDetails.setPersonWeight(100);
+		String response =nutritionGuruService.getPersonDietType(personDetails);
 		assertEquals(expectedResult, response);
 	}
 
