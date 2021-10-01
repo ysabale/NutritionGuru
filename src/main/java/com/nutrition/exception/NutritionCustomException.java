@@ -1,4 +1,4 @@
-package com.nutrition.config;
+package com.nutrition.exception;
 
 public class NutritionCustomException extends Exception{
 	

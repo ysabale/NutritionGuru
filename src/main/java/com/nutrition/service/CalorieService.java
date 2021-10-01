@@ -6,7 +6,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
-import com.nutrition.config.NutritionCustomException;
+import com.nutrition.exception.NutritionCustomException;
 import com.nutrition.model.UserCalorieDetails;
 import com.nutrition.util.CalorieCounterConstants;
 

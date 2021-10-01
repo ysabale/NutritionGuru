@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nutrition.config.NutritionCustomException;
+import com.nutrition.exception.NutritionCustomException;
 import com.nutrition.model.Diet;
 import com.nutrition.model.Food;
 import com.nutrition.model.PersonData;

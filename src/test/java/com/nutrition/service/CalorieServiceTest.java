@@ -11,8 +11,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import com.nutrition.config.NutritionCustomException;
 import com.nutrition.controller.CalorieController;
+import com.nutrition.exception.NutritionCustomException;
 import com.nutrition.model.UserCalorieDetails;
 
 @RunWith(PowerMockRunner.class)
