@@ -57,10 +57,12 @@ public class CaloriesHistoryServiceTest {
 
 		weightGainRequest = new WeightGainRequest();
 		weightGainRequest.setFromDate(new SimpleDateFormat("dd/MM/yyyy").parse("25/09/2021"));
+		weightGainRequest.setToDate(new SimpleDateFormat("dd/MM/yyyy").parse("25/09/2021"));
 		weightGainRequest.setUserName("Raj");
 
 		weightLossRequest = new WeightLossRequest();
 		weightLossRequest.setFromDate(new SimpleDateFormat("dd/MM/yyyy").parse("25/09/2021"));
+		weightLossRequest.setToDate(new SimpleDateFormat("dd/MM/yyyy").parse("25/09/2021"));
 		weightLossRequest.setUserName("John");
 
 	}

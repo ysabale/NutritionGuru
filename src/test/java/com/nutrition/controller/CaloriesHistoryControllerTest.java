@@ -88,7 +88,8 @@ public class CaloriesHistoryControllerTest {
 				.loadUserByUsername("pitambar2@gmail.com");
 		doReturn(weightLossList).when(caloriesHistoryService)
 				.getCaloriesHistoryForWeightLoss(any(WeightLossRequest.class));
-		mockMvc.perform(post("/getWeightLossHistory").header(HttpHeaders.AUTHORIZATION, "Bearer " + getToken())
+		mockMvc.perform(post("/getWeightLossHistory")
+				.header(HttpHeaders.AUTHORIZATION, "Bearer " + getToken())
 				.contentType(MediaType.APPLICATION_JSON).content(asJsonString(weightLossRequest)))
 				.andExpect(status().isOk());
 	}
@@ -105,7 +106,8 @@ public class CaloriesHistoryControllerTest {
 				.loadUserByUsername("pitambar2@gmail.com");
 		doReturn(weightGainList).when(caloriesHistoryService)
 				.getCaloriesHistoryForWeightGain(any(WeightGainRequest.class));
-		mockMvc.perform(post("/getWeightGainHistory").header(HttpHeaders.AUTHORIZATION, "Bearer " + getToken())
+		mockMvc.perform(post("/getWeightGainHistory")
+				.header(HttpHeaders.AUTHORIZATION, "Bearer " + getToken())
 				.contentType(MediaType.APPLICATION_JSON).content(asJsonString(weightGainRequest)))
 				.andExpect(status().isOk());
 	}

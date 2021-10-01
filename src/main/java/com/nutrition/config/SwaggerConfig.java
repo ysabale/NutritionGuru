@@ -1,4 +1,6 @@
 package com.nutrition.config;
+import javax.swing.border.TitledBorder;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -25,7 +27,7 @@ public class SwaggerConfig {
                 "Spring Boot REST API for Nutrition Guru App",
                 "1.0",
                 "Terms of service",
-                new Contact("Yogita Sabale", "", ""),
+                new Contact("Nutrition Guru Application", "", ""),
                "Apache License Version 2.0",
                 "https://www.apache.org/licenses/LICENSE-2.0");
     }

@@ -56,8 +56,6 @@ public class LoginServiceTest {
 		doReturn(loginDetails).when(loginRepository).save(any(LoginDetails.class));
 		LoginDetails userDetails = userService.signUp(loginDetails);
 		assertEquals("Test", userDetails.getUsername());
-		// assertEquals(Base64.getEncoder().encodeToString("xyz12345".getBytes()),
-		// (userDetails.getPassword()));
 		assertNotNull(userDetails.getEmailId());
 	}
 

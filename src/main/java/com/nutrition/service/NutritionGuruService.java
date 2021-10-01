@@ -34,7 +34,6 @@ public class NutritionGuruService {
 		float weight = personDetail.getPersonWeight();
 		float bMI = (weight / (heightInMeter * heightInMeter));
 		logger.info("Body mass index:" + bMI);
-
 		if (bMI < 18.5) {
 			return weightGain;
 		} else if (bMI > 18.5 && bMI < 24.9) {
