@@ -1,8 +1,7 @@
 package com.nutrition.config;
-import javax.swing.border.TitledBorder;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
@@ -32,3 +31,4 @@ public class SwaggerConfig {
                 "https://www.apache.org/licenses/LICENSE-2.0");
     }
 }
+

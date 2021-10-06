@@ -16,7 +16,6 @@ import org.springframework.web.context.request.WebRequest;
 
 import com.nutrition.model.ErrorMessage;
 
-
 @RestControllerAdvice
 public class NutritionExceptionHandler {
 

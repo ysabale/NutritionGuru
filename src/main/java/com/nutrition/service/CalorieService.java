@@ -38,14 +38,14 @@ public class CalorieService {
 		String gender = users.getGender();
 		float height = users.getHeight();
 		float weight = users.getWeight();
-		if ((gender.equals("F")) || (gender.equals("f"))) {
-			BMR = (float) (655 + (4.35f * weight) + (4.7f * height) - (4.7f * age));
-			log.info("Basal Metabolic Rate:" + BMR);
-		} else if ((gender.equals("M")) || (gender.equals("m"))) {
-			BMR = (float) (66 + (6.23f * weight) + (12.7f * height) - (6.8f * age));
+		if ((gender.equalsIgnoreCase("F"))) {
+		BMR = (float) (447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age));
+		log.info("Basal Metabolic Rate:" + BMR);
+		} else if ((gender.equalsIgnoreCase("M"))) {
+		BMR = (float) (88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age));
 		} else {
-			log.info("Unknown Gender");
-			throw new NutritionCustomException(CalorieCounterConstants.GENDER_SELECTION_ERROR);
+		log.info("Unknown Gender");
+		throw new NutritionCustomException(CalorieCounterConstants.GENDER_SELECTION_ERROR);
 		}
 		return BMRExcercise(BMR, users.getExcercise());
 	}
