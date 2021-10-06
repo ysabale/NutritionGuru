@@ -15,8 +15,8 @@ public class CalorieCounterConstants {
 	public static final String HEIGHT_MAX_ERROR_MSG = "Height should not be greater than 203cm ";
 	public static final String HEIGHT_NULL_MSG = "height Should not be Null";
 
-	public static final String WEIGHT_MIN_ERROR_MSG = "weight should not be smaller than 25kg";
-	public static final String WEIGHT_MAX_ERROR_MSG = "weight should not be greater than 200kg ";
+	public static final String WEIGHT_MIN_ERROR_MSG = "weight should not be smaller than 100cm";
+	public static final String WEIGHT_MAX_ERROR_MSG = "weight should not be greater than 203cm ";
 	public static final String WEIGHT_NULL_MSG = "weight Should not be Null";
 
 	public static final String EXCERCISE_NULL_MSG = "excercise Should not be Null";
