@@ -34,6 +34,8 @@ import lombok.Setter;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "diet_master")
 public class Diet implements Serializable {
 
