@@ -1,38 +1,41 @@
 package com.nutrition.service;
 
 import static org.junit.Assert.assertEquals;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.powermock.modules.junit4.PowerMockRunner;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import com.nutrition.model.PersonData;
 
-@RunWith(PowerMockRunner.class)
-public class NutritionGuruServiceTest {
 
-	@InjectMocks
+/**
+ * @author aymomin
+ *
+ */
+@SpringBootTest
+class NutritionGuruServiceTest {
+
+	@Autowired
 	private NutritionGuruService nutritionGuruService;
 
-	private PersonData person;
-
-	@Before
-	public void getPersonDetails() {
-		person = new PersonData();
-		person.setPersonHeight(170);
-		person.setPersonWeight(67);
-	}
-
+	
+	/**
+	 * @implNote test case for the person having stable weight
+	 */
 	@Test
-	public void testGetPersonDietTypeForStableWeight() {
+	void testGetPersonDietTypeForStableWeight() {
 		String expectedResult = "Stable Weight";
-		String response = nutritionGuruService.getPersonDietType(person);
+		PersonData personDetails = new PersonData();
+		personDetails.setPersonHeight(170);
+		personDetails.setPersonWeight(70);
+		String response = nutritionGuruService.getPersonDietType(personDetails);
 		assertEquals(expectedResult, response);
 	}
 
+	/**
+	 * @implNote test case for the person needs to Weight Gain
+	 */
 	@Test
-	public void testGetPersonDietTypeForWeightGain() {
+	void testGetPersonDietTypeForWeightGain() {
 		String expectedResult = "Weight Gain";
 		PersonData personDetails = new PersonData();
 		personDetails.setPersonHeight(170);
@@ -41,8 +44,11 @@ public class NutritionGuruServiceTest {
 		assertEquals(expectedResult, response);
 	}
 
+	/**
+	 * @implNote test case for the person needs to Weight Loss
+	 */
 	@Test
-	public void testGetPersonDietTypeForWeightLoss() {
+	void testGetPersonDietTypeForWeightLoss() {
 		String expectedResult = "Weight Loss";
 		PersonData personDetails = new PersonData();
 		personDetails.setPersonHeight(160);
@@ -50,5 +56,6 @@ public class NutritionGuruServiceTest {
 		String response = nutritionGuruService.getPersonDietType(personDetails);
 		assertEquals(expectedResult, response);
 	}
-
+	
+	
 }

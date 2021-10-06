@@ -15,12 +15,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nutrition.authentication.JwtTokenUtil;
+<<<<<<< HEAD
 import com.nutrition.config.UnauthorizedUser;
 import com.nutrition.model.LoginDetails;
 import com.nutrition.service.LoginService;
 
 
 
+=======
+import com.nutrition.exception.UnauthorizedUser;
+import com.nutrition.model.LoginDetails;
+import com.nutrition.service.LoginService;
+
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 @RestController
 public class LoginController {
 

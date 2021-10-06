@@ -2,9 +2,13 @@ package com.nutrition.controller;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doReturn;
+<<<<<<< HEAD
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+=======
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.text.ParseException;
@@ -69,7 +73,10 @@ public class CaloriesHistoryControllerTest {
 
 		weightGainRequest = new WeightGainRequest();
 		weightGainRequest.setFromDate(new SimpleDateFormat("dd/MM/yyyy").parse("25/09/2021"));
+<<<<<<< HEAD
 		weightGainRequest.setToDate(new SimpleDateFormat("dd/MM/yyyy").parse("26/09/2021"));
+=======
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 		weightGainRequest.setUserName("Raj");
 
 		weightLossRequest = new WeightLossRequest();
@@ -82,7 +89,11 @@ public class CaloriesHistoryControllerTest {
 	 * This method tested for get calories history for weight loss based on date
 	 * When valid input
 	 */
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 	@Test
 	void testRetrieveCaloriesHistoryForWeightLossByDateWhenValidInputThenSuccessful() throws Exception {
 		List<WeightLoss> weightLossList = new ArrayList<>();
@@ -91,7 +102,12 @@ public class CaloriesHistoryControllerTest {
 				.loadUserByUsername("pitambar2@gmail.com");
 		doReturn(weightLossList).when(caloriesHistoryService)
 				.getCaloriesHistoryForWeightLoss(any(WeightLossRequest.class));
+<<<<<<< HEAD
 		mockMvc.perform(post("/getWeightLossHistory").header(HttpHeaders.AUTHORIZATION, "Bearer " + getToken())
+=======
+		mockMvc.perform(post("/getWeightLossHistory")
+				.header(HttpHeaders.AUTHORIZATION, "Bearer " + getToken())
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 				.contentType(MediaType.APPLICATION_JSON).content(asJsonString(weightLossRequest)))
 				.andExpect(status().isOk());
 	}
@@ -108,7 +124,12 @@ public class CaloriesHistoryControllerTest {
 				.loadUserByUsername("pitambar2@gmail.com");
 		doReturn(weightGainList).when(caloriesHistoryService)
 				.getCaloriesHistoryForWeightGain(any(WeightGainRequest.class));
+<<<<<<< HEAD
 		mockMvc.perform(post("/getWeightGainHistory").header(HttpHeaders.AUTHORIZATION, "Bearer " + getToken())
+=======
+		mockMvc.perform(post("/getWeightGainHistory")
+				.header(HttpHeaders.AUTHORIZATION, "Bearer " + getToken())
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 				.contentType(MediaType.APPLICATION_JSON).content(asJsonString(weightGainRequest)))
 				.andExpect(status().isOk());
 	}

@@ -6,6 +6,10 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+<<<<<<< HEAD
+=======
+import org.springframework.web.bind.annotation.GetMapping;
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +22,10 @@ import com.nutrition.model.WeightLossRequest;
 import com.nutrition.model.WeightLossResponse;
 import com.nutrition.service.CaloriesHistoryService;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 @RestController
 public class CaloriesHistoryController {
 	static Logger logger = Logger.getLogger(CaloriesHistoryController.class.getName());
@@ -27,11 +34,19 @@ public class CaloriesHistoryController {
 
 	
 	/*
+<<<<<<< HEAD
+=======
+	 * 
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 	 * This method is used for fetch calories history of weight loss
 	 */
 	@PostMapping("/getWeightLossHistory")
 	public ResponseEntity<WeightLossResponse> getCaloriesHistoryForWeightLoss(
 			@RequestBody WeightLossRequest weightLossRequest) {
+<<<<<<< HEAD
+=======
+		System.out.println("weightLossRequest=******==="+weightLossRequest.getFromDate());
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 		List<WeightLoss> weightLossList = caloriesHistory.getCaloriesHistoryForWeightLoss(weightLossRequest);
 		WeightLossResponse weightLossResponse = new WeightLossResponse();
 		weightLossResponse.setList(weightLossList);

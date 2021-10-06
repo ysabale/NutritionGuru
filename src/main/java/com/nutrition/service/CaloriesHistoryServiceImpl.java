@@ -1,20 +1,38 @@
 package com.nutrition.service;
 
+<<<<<<< HEAD
+=======
+import java.text.SimpleDateFormat;
+import java.util.Date;
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+<<<<<<< HEAD
 
 import com.nutrition.config.DataNotFoundException;
+=======
+import org.springframework.util.FileSystemUtils;
+
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 import com.nutrition.model.WeightGain;
 import com.nutrition.model.WeightGainRequest;
 import com.nutrition.model.WeightLoss;
 import com.nutrition.model.WeightLossRequest;
+<<<<<<< HEAD
 import com.nutrition.repository.WeightGainRepository;
 import com.nutrition.repository.WeightLossRepository;
 
 
+=======
+import com.nutrition.exception.DataNotFoundException;
+import com.nutrition.exception.InvalidInputException;
+import com.nutrition.repository.WeightGainRepository;
+import com.nutrition.repository.WeightLossRepository;
+
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 @Service
 public class CaloriesHistoryServiceImpl implements CaloriesHistoryService {
 	static Logger logger = Logger.getLogger(CaloriesHistoryServiceImpl.class.getName());

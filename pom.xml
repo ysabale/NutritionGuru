@@ -123,13 +123,17 @@
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
+<<<<<<< HEAD
 			<version>4.5</version>
+=======
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-junit-jupiter</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
 
 		<!-- <dependency> <groupId>org.junit.jupiter</groupId> <artifactId>junit-jupiter</artifactId> 
 			<scope>test</scope> </dependency> -->
@@ -145,6 +149,13 @@
 			<artifactId>junit-addons</artifactId>
 			<scope>test</scope>
 		</dependency> -->
+=======
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 
 	</dependencies>
 

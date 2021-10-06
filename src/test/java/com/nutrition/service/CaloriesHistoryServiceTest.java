@@ -23,7 +23,10 @@ import com.nutrition.model.WeightLossRequest;
 import com.nutrition.repository.WeightGainRepository;
 import com.nutrition.repository.WeightLossRepository;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 @SpringBootTest
 public class CaloriesHistoryServiceTest {
 

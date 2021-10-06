@@ -16,7 +16,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.nutrition.model.LoginDetails;
 import com.nutrition.repository.LoginRepository;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 @SpringBootTest
 public class LoginServiceTest {
 
@@ -57,8 +60,11 @@ public class LoginServiceTest {
 		doReturn(loginDetails).when(loginRepository).save(any(LoginDetails.class));
 		LoginDetails userDetails = userService.signUp(loginDetails);
 		assertEquals("Test", userDetails.getUsername());
+<<<<<<< HEAD
 		// assertEquals(Base64.getEncoder().encodeToString("xyz12345".getBytes()),
 		// (userDetails.getPassword()));
+=======
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 		assertNotNull(userDetails.getEmailId());
 	}
 

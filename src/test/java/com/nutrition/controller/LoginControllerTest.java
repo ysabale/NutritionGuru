@@ -5,7 +5,10 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
+<<<<<<< HEAD
 import static org.mockito.Mockito.when;
+=======
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -26,9 +29,16 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.test.web.servlet.MockMvc;
 
+<<<<<<< HEAD
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nutrition.config.InvalidInputException;
 import com.nutrition.model.LoginDetails;
+=======
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.nutrition.model.LoginDetails;
+import com.nutrition.exception.InvalidInputException;
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 import com.nutrition.service.LoginServiceImpl;
 
 @AutoConfigureMockMvc
@@ -76,8 +86,11 @@ public class LoginControllerTest {
 	@Test
 	void testCreateApplicationUserWhenValidInputThenSuccessful() throws Exception {
 		doReturn(loginDetails).when(userService).signUp(any(LoginDetails.class));
+<<<<<<< HEAD
 		//doReturn(false).when(userService).checkIfUserExist(any(String.class));
 		when(userService.checkIfUserExist(any(String.class))).thenReturn(Boolean.FALSE);
+=======
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 		mockMvc.perform(
 				post("/userCreation").contentType(MediaType.APPLICATION_JSON).content(asJsonString(loginDetails)))
 				.andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))

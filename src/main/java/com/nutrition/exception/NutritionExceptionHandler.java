@@ -1,4 +1,4 @@
-package com.nutrition.config;
+package com.nutrition.exception;
 
 import java.util.HashMap;
 import java.util.Map;

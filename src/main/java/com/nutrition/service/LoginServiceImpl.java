@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+<<<<<<< HEAD
 import com.nutrition.config.InvalidInputException;
 import com.nutrition.config.UnauthorizedUser;
 import com.nutrition.config.UserAlreadyExistException;
@@ -19,6 +20,14 @@ import com.nutrition.model.LoginDetails;
 import com.nutrition.repository.LoginRepository;
 
 
+=======
+import com.nutrition.model.LoginDetails;
+import com.nutrition.exception.InvalidInputException;
+import com.nutrition.exception.UnauthorizedUser;
+import com.nutrition.exception.UserAlreadyExistException;
+import com.nutrition.repository.LoginRepository;
+
+>>>>>>> b9d8f793d11dfa9cce97cf702482c5b929659409
 @Service
 public class LoginServiceImpl implements LoginService, UserDetailsService {
 
